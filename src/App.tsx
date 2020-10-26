@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     I18n.init();
     console.log('API_URL', API_URL);
-  });
+  }, []);
 
   return (
     <NavigationContainer>
