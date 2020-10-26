@@ -12,17 +12,7 @@ import {
   ContinentsVariables,
 } from '@Services/Apollo/queries/types/Continents';
 import { Logos } from '@Assets/Img';
-import {
-  Container,
-  Buttons,
-  LocaleButton,
-  LocaleButtonText,
-  Middle,
-  Centered,
-  Bottom,
-  ContinueButton,
-  ContinueText,
-} from './styled';
+import * as S from './styled';
 
 const styles = StyleSheet.create({
   stretch: {
@@ -44,11 +34,11 @@ const Home: React.FunctionComponent<IHomePage.IProps> = () => {
 
   const renderLocaleButtons = (activeLanguage: string) =>
     ['en', 'ua'].map((lang) => (
-      <LocaleButton key={lang} onPress={() => i18n.changeLanguage(lang)}>
-        <LocaleButtonText isActive={activeLanguage === lang}>
+      <S.LocaleButton key={lang} onPress={() => i18n.changeLanguage(lang)}>
+        <S.LocaleButtonText isActive={activeLanguage === lang}>
           {lang}
-        </LocaleButtonText>
-      </LocaleButton>
+        </S.LocaleButtonText>
+      </S.LocaleButton>
     ));
 
   const handleContinue = () => {
@@ -56,20 +46,20 @@ const Home: React.FunctionComponent<IHomePage.IProps> = () => {
   };
 
   return (
-    <Container>
-      <Buttons>{renderLocaleButtons(i18n.language)}</Buttons>
-      <Middle>
-        <Centered>
+    <S.Container>
+      <S.Buttons>{renderLocaleButtons(i18n.language)}</S.Buttons>
+      <S.Middle>
+        <S.Centered>
           <Logos.Valor style={styles.stretch} />
           <Heading text={t('home:Hello')} />
-        </Centered>
-        <Bottom>
-          <ContinueButton onPress={() => handleContinue()}>
-            <ContinueText>{t('home:Continue')}</ContinueText>
-          </ContinueButton>
-        </Bottom>
-      </Middle>
-    </Container>
+        </S.Centered>
+        <S.Bottom>
+          <S.ContinueButton onPress={() => handleContinue()}>
+            <S.ContinueText>{t('home:Continue')}</S.ContinueText>
+          </S.ContinueButton>
+        </S.Bottom>
+      </S.Middle>
+    </S.Container>
   );
 };
 

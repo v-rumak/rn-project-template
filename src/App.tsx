@@ -14,7 +14,7 @@ import { SafeArea } from '@Styled';
 const App = () => {
   useEffect(() => {
     I18n.init();
-  });
+  }, []);
 
   return (
     <NavigationContainer>
