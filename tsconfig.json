@@ -43,6 +43,7 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js",
+    "apollo.config.js",
     "test",
     "index.js"
   ]

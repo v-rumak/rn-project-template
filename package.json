@@ -8,12 +8,20 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "clear": "watchman watch-del-all && rm -rf /tmp/metro-bundler-cache-* && rm -rf /tmp/haste-map-react-native-packager-* && react-native start --reset-cache"
+    "clear": "watchman watch-del-all && rm -rf /tmp/metro-bundler-cache-* && rm -rf /tmp/haste-map-react-native-packager-* && react-native start --reset-cache",
+    "schema:pull": "apollo client:download-schema src/services/Apollo/graphql-schema.json",
+    "schema:types": "apollo codegen:generate --target=typescript --tagName=gql --addTypename --localSchemaFile=src/services/Apollo/graphql-schema.json --globalTypesFile=src/types/graphql-global-types.ts types"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.6",
     "@react-navigation/stack": "^5.9.3",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
     "i18next": "^19.8.2",
     "react": "16.13.1",
     "react-i18next": "^11.7.3",

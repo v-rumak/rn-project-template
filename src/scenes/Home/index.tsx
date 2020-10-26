@@ -1,9 +1,16 @@
 import * as React from 'react';
-import { Dimensions, TouchableOpacity, StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useQuery } from '@apollo/react-hooks';
+import { API_URL } from '@env';
+import { Apollo } from '@Services';
 
 import { Heading } from '@Components';
 import { IHomePage } from '@Interfaces';
+import {
+  Continents,
+  ContinentsVariables,
+} from '@Services/Apollo/queries/types/Continents';
 import { Logos } from '@Assets/Img';
 import {
   Container,
@@ -27,6 +34,13 @@ const styles = StyleSheet.create({
 
 const Home: React.FunctionComponent<IHomePage.IProps> = () => {
   const { t, i18n } = useTranslation();
+  const { data, loading } = useQuery<Continents, ContinentsVariables>(
+    Apollo.queries.continents
+  );
+
+  console.log('[API] URL', API_URL);
+  console.log('[API] Loading:', loading);
+  console.log('[API] Continents:', data?.continents);
 
   const renderLocaleButtons = (activeLanguage: string) =>
     ['en', 'ua'].map((lang) => (
