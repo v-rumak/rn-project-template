@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { theme } from '@Definitions/Styled';
 import Home from '@Scenes/Home';
 
 const Stack = createStackNavigator();
