@@ -4,7 +4,6 @@ import { ITestData } from '@Types/Axios/response';
 import * as React from 'react';
 import { Dimensions, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
-
 import { Heading } from '@Components';
 import { IHomePage } from '@Types';
 import { Logos } from '@Assets/Img';

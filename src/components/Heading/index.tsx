@@ -1,4 +1,3 @@
-// #region Global Imports
 import * as React from 'react';
 import * as S from './styled';
 import { IHeading } from '@Types/Components/Heading';
