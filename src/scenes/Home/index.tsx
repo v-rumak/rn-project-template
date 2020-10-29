@@ -1,9 +1,12 @@
+import { API_ENDPOINTS } from '@Definitions/Axios';
+import { useGet } from '@Services';
+import { ITestData } from '@Types/Axios/response';
 import * as React from 'react';
 import { Dimensions, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Heading } from '@Components';
-import { IHomePage } from '@Interfaces';
+import { IHomePage } from '@Types';
 import { Logos } from '@Assets/Img';
 import * as S from './styled';
 
@@ -17,6 +20,10 @@ const styles = StyleSheet.create({
 
 const Home: React.FunctionComponent<IHomePage.IProps> = () => {
   const { t, i18n } = useTranslation();
+  const { data, loading } = useGet<ITestData>(API_ENDPOINTS.GET.test);
+
+  console.log('[API] Loading', loading);
+  console.log('[API] Data', data);
 
   const renderLocaleButtons = (activeLanguage: string) =>
     ['en', 'ua'].map((lang) => (

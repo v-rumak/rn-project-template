@@ -12,7 +12,7 @@ module.exports = {
           '@Components': './src/components',
           '@Styled': './src/styled',
           '@Definitions': './src/definitions',
-          '@Interfaces': './src/interfaces',
+          '@Types': './src/types',
           '@I18n': './src/i18n',
           '@Router': './src/router',
           '@Services': './src/services',
