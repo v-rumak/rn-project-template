@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Dimensions, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
-
 import { Heading } from '@Components';
-import { IHomePage } from '@Interfaces';
+import { IHomePage } from '@Types';
 import { Logos } from '@Assets/Img';
 import * as S from './styled';
 
