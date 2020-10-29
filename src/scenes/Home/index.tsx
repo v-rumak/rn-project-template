@@ -6,7 +6,7 @@ import { API_URL } from '@env';
 import { Apollo } from '@Services';
 
 import { Heading } from '@Components';
-import { IHomePage } from '@Interfaces';
+import { IHomePage } from '@Types';
 import {
   Continents,
   ContinentsVariables,
